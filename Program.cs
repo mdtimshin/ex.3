@@ -6,19 +6,28 @@ namespace ex._3
     {
         static void Main(string[] args)
         {
-            double x, y, u;
-            x = double.Parse(Console.ReadLine());
-            y = double.Parse(Console.ReadLine());
-            if (y >= Math.Abs(x))
+            try
             {
-                u = Math.Sqrt(Math.Abs(x * x - 1));
+                double x, y, u;
+                Console.WriteLine("Введите значение x");
+                x = double.Parse(Console.ReadLine());
+                Console.WriteLine("Введите значение y");
+                y = double.Parse(Console.ReadLine());
+                if (y >= Math.Abs(x))
+                {
+                    u = Math.Sqrt(Math.Abs(x * x - 1));
+                }
+                else
+                {
+                    u = x + y;
+                }
+                Console.WriteLine($"Значение u = {u}");
+                Console.ReadKey();
             }
-            else
+            catch (System.FormatException)
             {
-                u = x + y;
+                Console.WriteLine("Введён не числовой формат");
             }
-            Console.WriteLine(u);
-            Console.ReadKey();
         }
     }
 }
